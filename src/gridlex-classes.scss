@@ -8,7 +8,7 @@
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
-  margin: 0 calc(-$gl-gutter / 2);
+  margin: 0 calc(calc(-1 * $gl-gutter) / 2);
 }
 // COLS
 [#{$gl-attributeName}~="#{$gl-colName}"],

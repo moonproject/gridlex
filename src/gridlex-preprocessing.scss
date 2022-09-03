@@ -6,14 +6,13 @@ $gl-colPortions: (
   0: 0
 );
 @for $i from 1 through $gl-colCount {
-  $gl-colPortions: map-merge($gl-colPortions, ($i: ($gl-colUnit*$i)));
+  $gl-colPortions: map-merge($gl-colPortions, ($i: calc($gl-colUnit * $i)));
 }
 
 // calculate and store nth fractions for grid by number
-$gl-colFractions: (
-  0: 0 // Avoid division by zero if $i would start at 0
-);
+// Avoid division by zero if $i would start at 0
+$gl-colFractions: (0: 0);
 @for $i from 1 through $gl-colCount {
   $fraction: calc(1 / $i);
-  $gl-colFractions: map-merge($gl-colFractions, ($fraction: $fraction * 100%));
+  $gl-colFractions: map-merge($gl-colFractions, ($fraction: calc($fraction * 100%)));
 }

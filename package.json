@@ -30,9 +30,9 @@
     "docs": "cp -R dist/*.* docs"
   },
   "devDependencies": {
-    "cssnano": "^5",
-    "node-sass": "^7",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^10"
+    "cssnano": ">=5",
+    "node-sass": ">=7",
+    "postcss": ">=8.4.16",
+    "postcss-cli": ">=10"
   }
 }

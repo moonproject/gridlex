@@ -1,0 +1,17 @@
+version: '3'
+name: gridlex
+volumes:
+  node_modules_cache:
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: gridlex
+    volumes:
+      - '..:/app:cached'
+      - 'node_modules_cache:/app/node_modules:cached'
+    stdin_open: true
+    tty: true
+    entrypoint: ['/bin/bash', '-l', '-c']
+    command: '"tail -f /dev/null"'

@@ -1,0 +1,58 @@
+{
+    "name": "gridlex",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/app",
+    "shutdownAction": "stopCompose",
+    // "overrideCommand": "",
+    "mounts": [
+      "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "atishay-jain.all-autocomplete",
+          "formulahendry.auto-close-tag",
+          "formulahendry.auto-rename-tag",
+          "alefragnani.bookmarks",
+          "naumovs.color-highlight",
+          "vilicvane.es-quotes",
+          "dsznajder.es7-react-js-snippets",
+          "dbaeumer.vscode-eslint",
+          "ecmel.vscode-html-css",
+          "visualstudioexptteam.vscodeintel",
+          "visualstudioexptteam.intellicode-api-usage-examples",
+          "xabikos.javascriptsnippets",
+          "yzhang.markdown-all-in-one",
+          "shd101wyy.markdown-preview-enhanced",
+          "bierner.markdown-preview-github-styles",
+          "davidanson.vscode-markdownlint",
+          "possan.nbsp-vscode",
+          "visualstudioexptteam.vscodeintellicode",
+          "christian-kohler.path-intellisense",
+          "humao.rest-client",
+          "stkb.rewrap",
+          "rebornix.ruby",
+          "jasonnutter.search-node-modules",
+          "ow.vscode-subword-navigation",
+          "emmanuelbeziat.vscode-great-icons",
+          "wingrunr21.vscode-ruby",
+          "styled-components.vscode-styled-components",
+          "esbenp.prettier-vscode",
+          "misogi.ruby-rubocop",
+          "patbenatar.advanced-new-file"
+        ]
+      },
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash (login)",
+        "terminal.integrated.profiles.linux": {
+          "bash (login)": {
+            "path": "/bin/bash",
+            "args": ["--login"]
+          }
+        }
+      }
+    },
+
+    "postAttachCommand": "git config --global --add safe.directory /app"
+}
